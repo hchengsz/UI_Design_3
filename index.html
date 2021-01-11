@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Movie DB</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <nav>
+        <ul class="navBar desktop-nav">
+            <img src="./img/logo.svg" />
+            <a id="home" class="hover-link" onclick="loadData()">
+                <li>HOME</li>
+            </a>
+            <a id="likedList" class="hover-link" onclick="handleLikedListClick()">
+                <li>LIKED LIST</li>
+            </a>
+        </ul>
+    </nav>
+
+    <form action="">
+        <select name="types" id="form">
+        <option value="popular" selected>Popular</option>
+        <option value="now_playing">Now Playing</option>
+        <option value="top_rated">Top Rated</option>
+        <option value="upcoming">Upcoming</option>
+        </select>
+    </form>
+
+    <div class="selectPage">
+        <button class="prevPage">Prev</button>
+        <p id="page"></p>
+        <button class="nextPage">Next</button>
+    </div>
+
+    <div class="movies">
+    </div>
+
+    <div id="background">
+    </div>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+
+</html>

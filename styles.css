@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui;
+    color: #0d253f;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.navBar {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+}
+
+form {
+    position: relative;
+    padding: 15px 0;
+}
+
+.selectPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.selectPage button {
+    background-color: transparent;
+    border-radius: 6px;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    padding: 7px;
+    color: #01b4e4;
+    border: 1px solid #01b4e4;
+}
+
+.selectPage button:hover {
+    background-color: rgba(67, 68, 68, 0.2);
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    grid-gap: 2rem;
+    font-size: 1.6rem;
+}
+
+.movie {
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.movie__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    height: 2.4rem;
+}
+
+.movie__name:hover {
+    color: #01b4e4;
+}
+
+.movie__data {
+    display: flex;
+    justify-content: space-between;
+    height: 1.5rem;
+}
+
+.movie__data ion-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.3rem;
+}
+
+.movie__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie__img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.hover-link {
+    list-style: none;
+    margin-right: 25px;
+    align-items: flex-end;
+    font-size: 18px;
+}
+
+.hover-link::after {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: #01b4e4;
+    display: block;
+    transition: width 0.5s;
+}
+
+.base-line {
+    list-style: none;
+    margin-right: 25px;
+    align-items: flex-end;
+    font-size: 18px;
+}
+
+.base-line::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #01b4e4;
+    display: block;
+    transition: width 0.5s;
+}
+
+.hover-link:hover {
+    color: #01b4e4;
+}
+
+.hover-link:hover::after {
+    width: 100%;
+}
+
+.navBar img {
+    width: 65px;
+    margin-right: 50px;
+}
+
+.lock:hover .icon-unlock,
+.lock .icon-lock {
+    display: none;
+}
+
+.lock:hover .icon-lock {
+    display: inline-flex;
+}
+
+#background {
+    /* 默认隐藏不显示 */
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* 如果使用下面这个参数,一旦弹框后,背景的内容就看不到了. */
+    background-color: rgba(17, 17, 17, 0.5);
+}
+
+
+/* 弹窗页面的背景 */
+
+.popWindow {
+    /* 弹窗的背景颜色 */
+    background: #eeeeee;
+    /* 弹出页面的宽度 */
+    width: 60%;
+    height: 60%;
+    /* z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。 */
+    z-index: 1;
+    /* 弹窗的位置,左边数字为top距离,右边的为left距离 */
+    margin: 10% auto;
+}
+
+.popWindow .poster {
+    height: 90%;
+}
+
+.genre {
+    display: flex;
+    list-style: none;
+}
+
+.genre li {
+    background-color: #90cea1;
+    color: white;
+    margin-right: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 2rem;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.production {
+    display: flex;
+    list-style: none;
+}
+
+.production li {
+    margin-right: 15px;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    padding: 10px;
+    width: 100%;
+    height: 92%;
+}
+
+#overview {
+    margin: auto;
+    /* 弹出页面高度,如果不固定高度,高度会以实际内容扩展 */
+    height: auto;
+    width: 90%;
+    margin-right: 10%;
+    max-height: 100px;
+    /* 
+        属性规定当内容溢出元素框时发生的事情。
+        如果内容超出，则浏览器会显示滚动条以便查看其余的内容。
+    */
+    overflow: auto;
+}
+
+#image {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#text {
+    margin-left: 10px;
+    padding-top: 10px;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+
+#text h2 {
+    margin-bottom: 20px;
+}
+
+#text p,
+h4,
+ul {
+    margin-bottom: 9px;
+}
+
+#close-button {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+#close-button span {
+    margin-top: 10px;
+    cursor: pointer;
+}
